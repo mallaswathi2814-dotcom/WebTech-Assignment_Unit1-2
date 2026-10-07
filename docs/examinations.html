@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Examinations | University Academic Portal</title>
+
+<style>
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #263238;
+}
+
+/* TOP BAR */
+
+.topbar {
+    background: #102a43;
+    color: white;
+    padding: 10px 7%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#1565c0,#6a1b9a);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.university-name h1 {
+    color: #102a43;
+    font-size: 22px;
+}
+
+.university-name p {
+    color: #607d8b;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #263238;
+    font-weight: bold;
+    padding: 10px 13px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: #1565c0;
+    color: white;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(135deg,#102a43,#1565c0);
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.hero h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    color: #e3f2fd;
+    line-height: 1.6;
+}
+
+/* SECTION */
+
+.section {
+    padding: 60px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #102a43;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #607d8b;
+}
+
+/* SUMMARY CARDS */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    margin-bottom: 55px;
+}
+
+.summary-card {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    border-top: 5px solid #c62828;
+}
+
+.summary-card h2 {
+    color: #c62828;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.summary-card p {
+    color: #607d8b;
+    font-weight: bold;
+}
+
+/* EXAMINATION CARDS */
+
+.exam-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.exam-card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    border-left: 6px solid #c62828;
+    transition: 0.3s;
+}
+
+.exam-card:hover {
+    transform: translateY(-5px);
+}
+
+.exam-card h3 {
+    color: #c62828;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.exam-card p {
+    color: #607d8b;
+    line-height: 1.7;
+}
+
+.exam-card ul {
+    margin-left: 20px;
+    color: #607d8b;
+    line-height: 1.8;
+}
+
+/* TABLE */
+
+.table-container {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-top: 50px;
+    overflow-x: auto;
+}
+
+.table-container h2 {
+    color: #102a43;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+th {
+    background: #c62828;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    color: #546e7a;
+}
+
+tr:hover {
+    background: #f4f7fb;
+}
+
+/* EXAM TIMINGS */
+
+.timing-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.timing-card {
+    background: white;
+    padding: 28px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    border-top: 5px solid #1565c0;
+}
+
+.timing-card h3 {
+    color: #1565c0;
+    margin-bottom: 12px;
+}
+
+.timing-card p {
+    color: #607d8b;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* TWO COLUMN */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.column-card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.column-card h2 {
+    color: #102a43;
+    margin-bottom: 18px;
+}
+
+.column-card ul {
+    margin-left: 22px;
+    color: #546e7a;
+    line-height: 2;
+}
+
+/* NOTICE */
+
+.notice {
+    margin-top: 45px;
+    background: #e3f2fd;
+    padding: 28px;
+    border-left: 6px solid #1565c0;
+    border-radius: 10px;
+}
+
+.notice h3 {
+    color: #1565c0;
+    margin-bottom: 12px;
+}
+
+.notice p {
+    color: #455a64;
+    line-height: 1.8;
+}
+
+/* WARNING */
+
+.warning-box {
+    margin-top: 30px;
+    background: #fff3e0;
+    padding: 28px;
+    border-left: 6px solid #ef6c00;
+    border-radius: 10px;
+}
+
+.warning-box h3 {
+    color: #ef6c00;
+    margin-bottom: 12px;
+}
+
+.warning-box p {
+    color: #5d4037;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+    background: #102a43;
+    color: white;
+    padding: 40px 7%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer p {
+    color: #d9e2ec;
+    margin: 8px;
+}
+
+footer a {
+    color: #ffca28;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .exam-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .timing-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width:650px) {
+
+    .topbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .summary-grid,
+    .exam-grid,
+    .timing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div>
+        Examination Helpdesk: +91 93986 38250
+    </div>
+
+    <div>
+        universityacademic@gmail.com | Academic Year 2027
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo-section">
+
+        <div class="logo">
+            VU
+        </div>
+
+        <div class="university-name">
+
+            <h1>University Academic Portal</h1>
+
+            <p>Academic Information & Student Services</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="department.html">
+            Departments / Schools
+        </a>
+
+        <a href="program.html">
+            Programs
+        </a>
+
+        <a href="academiccalendar.html">
+            Academic Calendar
+        </a>
+
+        <a href="regulations.html">
+            Regulations
+        </a>
+
+        <a href="examinations.html" class="active">
+            Examinations
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h2>Examinations</h2>
+
+    <p>
+        Examination Services • Schedules • Results • Revaluation • Student Guidelines
+    </p>
+
+</section>
+
+
+<!-- MAIN CONTENT -->
+
+<section class="section">
+
+
+    <!-- SUMMARY -->
+
+    <div class="section-title">
+
+        <h2>Examination Services at a Glance</h2>
+
+        <p>
+            Important examination information for students
+        </p>
+
+    </div>
+
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+
+            <h2>06</h2>
+
+            <p>Major Examination Activities</p>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <h2>02</h2>
+
+            <p>Internal Assessments</p>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <h2>02</h2>
+
+            <p>Semester Examinations</p>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <h2>24/7</h2>
+
+            <p>Online Academic Information</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- EXAMINATION TYPES -->
+
+    <div class="section-title">
+
+        <h2>Types of Examinations</h2>
+
+        <p>
+            Different examinations conducted during an academic year
+        </p>
+
+    </div>
+
+
+    <div class="exam-grid">
+
+
+        <div class="exam-card">
+
+            <h3>📝 Internal Assessment</h3>
+
+            <p>
+                Internal assessments are conducted during the
+                semester to evaluate students' continuous academic
+                performance.
+            </p>
+
+            <ul>
+                <li>Internal tests</li>
+                <li>Assignments</li>
+                <li>Class participation</li>
+                <li>Academic activities</li>
+            </ul>
+
+        </div>
+
+
+        <div class="exam-card">
+
+            <h3>📚 Semester Examination</h3>
+
+            <p>
+                Semester-end examinations evaluate the student's
+                knowledge and understanding of subjects completed
+                during the semester.
+            </p>
+
+            <ul>
+                <li>Theory examinations</li>
+                <li>End-semester evaluation</li>
+                <li>Question papers</li>
+                <li>Answer script evaluation</li>
+            </ul>
+
+        </div>
+
+
+        <div class="exam-card">
+
+            <h3>💻 Practical Examination</h3>
+
+            <p>
+                Practical examinations assess students' ability to
+                apply theoretical knowledge through laboratory and
+                practical activities.
+            </p>
+
+            <ul>
+                <li>Laboratory examination</li>
+                <li>Practical demonstration</li>
+                <li>Viva voce</li>
+                <li>Record verification</li>
+            </ul>
+
+        </div>
+
+
+        <div class="exam-card">
+
+            <h3>🔄 Supplementary Examination</h3>
+
+            <p>
+                Supplementary examinations provide eligible students
+                with an opportunity to clear failed or pending
+                courses.
+            </p>
+
+            <ul>
+                <li>Backlog subjects</li>
+                <li>Arrear examinations</li>
+                <li>Exam registration</li>
+                <li>Fee payment</li>
+            </ul>
+
+        </div>
+
+
+        <div class="exam-card">
+
+            <h3>🔍 Revaluation</h3>
+
+            <p>
+                Students may apply for revaluation of answer scripts
+                when the facility is provided by the university.
+            </p>
+
+            <ul>
+                <li>Online application</li>
+                <li>Prescribed fee</li>
+                <li>Revaluation process</li>
+                <li>Updated result</li>
+            </ul>
+
+        </div>
+
+
+        <div class="exam-card">
+
+            <h3>📊 Results & Marks</h3>
+
+            <p>
+                Examination results and marks are published after
+                completion of the evaluation and result processing
+                process.
+            </p>
+
+            <ul>
+                <li>Results</li>
+                <li>Grade card</li>
+                <li>Semester marks</li>
+                <li>Academic performance</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- EXAMINATION SCHEDULE -->
+
+    <div class="table-container">
+
+        <h2>📅 Examination Schedule – 2027</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Examination</th>
+
+                <th>Date</th>
+
+                <th>Time</th>
+
+                <th>Type</th>
+
+                <th>Purpose</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Internal Assessment I</td>
+
+                <td>18–22 January 2027</td>
+
+                <td>10:00 AM – 12:00 PM</td>
+
+                <td>Internal</td>
+
+                <td>Continuous Assessment</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Internal Assessment II</td>
+
+                <td>12–16 April 2027</td>
+
+                <td>10:00 AM – 12:00 PM</td>
+
+                <td>Internal</td>
+
+                <td>Continuous Assessment</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Practical Examination I</td>
+
+                <td>01–05 May 2027</td>
+
+                <td>9:30 AM – 12:30 PM</td>
+
+                <td>Practical</td>
+
+                <td>Laboratory Evaluation</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Semester-End Examination I</td>
+
+                <td>10–25 May 2027</td>
+
+                <td>9:30 AM – 12:30 PM</td>
+
+                <td>Theory</td>
+
+                <td>End Semester Evaluation</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Supplementary Examination</td>
+
+                <td>June 2027</td>
+
+                <td>9:30 AM – 12:30 PM</td>
+
+                <td>Supplementary</td>
+
+                <td>Backlog / Arrear Courses</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Semester-End Examination II</td>
+
+                <td>06–20 December 2027</td>
+
+                <td>9:30 AM – 12:30 PM</td>
+
+                <td>Theory</td>
+
+                <td>End Semester Evaluation</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- EXAM TIMINGS -->
+
+    <div class="section-title" style="margin-top:60px;">
+
+        <h2>⏰ Examination Timings</h2>
+
+        <p>
+            Standard examination session timings
+        </p>
+
+    </div>
+
+
+    <div class="timing-grid">
+
+
+        <div class="timing-card">
+
+            <h3>Morning Session</h3>
+
+            <p>
+                9:30 AM – 12:30 PM
+            </p>
+
+        </div>
+
+
+        <div class="timing-card">
+
+            <h3>Afternoon Session</h3>
+
+            <p>
+                2:00 PM – 5:00 PM
+            </p>
+
+        </div>
+
+
+        <div class="timing-card">
+
+            <h3>Practical Examination</h3>
+
+            <p>
+                9:30 AM – 12:30 PM
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- EXAMINATION RULES -->
+
+    <div class="table-container">
+
+        <h2>📋 Examination Rules & Instructions</h2>
+
+        <table>
+
+            <tr>
+
+                <th>No.</th>
+
+                <th>Rule</th>
+
+                <th>Student Instruction</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>1</td>
+
+                <td>Reporting Time</td>
+
+                <td>
+                    Students should reach the examination hall
+                    before the scheduled examination time.
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>2</td>
+
+                <td>Identity Card</td>
+
+                <td>
+                    Carry a valid university identity card.
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>3</td>
+
+                <td>Hall Ticket</td>
+
+                <td>
+                    Carry the prescribed examination hall ticket.
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>4</td>
+
+                <td>Stationery</td>
+
+                <td>
+                    Carry permitted stationery required for the examination.
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>5</td>
+
+                <td>Electronic Devices</td>
+
+                <td>
+                    Mobile phones and unauthorized electronic
+                    devices are not permitted.
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>6</td>
+
+                <td>Malpractice</td>
+
+                <td>
+                    Any form of malpractice may lead to disciplinary action.
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>7</td>
+
+                <td>Answer Book</td>
+
+                <td>
+                    Students must follow instructions for writing
+                    and submitting answer scripts.
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>8</td>
+
+                <td>Late Entry</td>
+
+                <td>
+                    Late entry is subject to applicable examination rules.
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>9</td>
+
+                <td>Leaving Examination Hall</td>
+
+                <td>
+                    Students should follow the prescribed procedure
+                    before leaving the examination hall.
+                </td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>10</td>
+
+                <td>Discipline</td>
+
+                <td>
+                    Students must maintain silence and discipline
+                    inside the examination hall.
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- TWO COLUMN INFORMATION -->
+
+    <div class="two-column">
+
+
+        <div class="column-card">
+
+            <h2>🎫 Hall Ticket Guidelines</h2>
+
+            <ul>
+
+                <li>Download or collect the hall ticket before the examination.</li>
+
+                <li>Verify the name and examination details.</li>
+
+                <li>Check the examination date and time.</li>
+
+                <li>Check the examination hall or room number.</li>
+
+                <li>Carry the hall ticket to every examination.</li>
+
+                <li>Report any errors to the examination office.</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="column-card">
+
+            <h2>📖 Before the Examination</h2>
+
+            <ul>
+
+                <li>Check the examination timetable carefully.</li>
+
+                <li>Prepare the required stationery.</li>
+
+                <li>Carry the university identity card.</li>
+
+                <li>Carry the examination hall ticket.</li>
+
+                <li>Reach the examination venue early.</li>
+
+                <li>Follow all instructions given by the invigilator.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- MALPRACTICE -->
+
+    <div class="table-container">
+
+        <h2>⚠️ Examination Malpractice</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Activity</th>
+
+                <th>Example</th>
+
+                <th>Action</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Unauthorized Material</td>
+
+                <td>Using prohibited notes or materials</td>
+
+                <td>May lead to disciplinary action</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Electronic Devices</td>
+
+                <td>Using unauthorized mobile phones or devices</td>
+
+                <td>May lead to cancellation of examination</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Copying</td>
+
+                <td>Copying answers from another student</td>
+
+                <td>May lead to disciplinary proceedings</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Impersonation</td>
+
+                <td>Writing an examination on behalf of another person</td>
+
+                <td>Serious disciplinary action</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Question Paper Misconduct</td>
+
+                <td>Unauthorized handling or sharing of examination material</td>
+
+                <td>Action according to examination regulations</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- RESULTS -->
+
+    <div class="two-column">
+
+
+        <div class="column-card">
+
+            <h2>📊 Results</h2>
+
+            <ul>
+
+                <li>Results are published after evaluation.</li>
+
+                <li>Students can check semester-wise results.</li>
+
+                <li>Grade information may be displayed with results.</li>
+
+                <li>Students should verify their marks carefully.</li>
+
+                <li>Grade cards may be issued according to university procedure.</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="column-card">
+
+            <h2>🔄 Revaluation & Supplementary</h2>
+
+            <ul>
+
+                <li>Eligible students may apply for revaluation.</li>
+
+                <li>Applications must be submitted within the prescribed deadline.</li>
+
+                <li>Supplementary examinations may be available for eligible students.</li>
+
+                <li>Backlog subjects should be registered separately.</li>
+
+                <li>Prescribed examination fees may apply.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- IMPORTANT NOTICE -->
+
+    <div class="notice">
+
+        <h3>📢 Important Examination Notice</h3>
+
+        <p>
+            Students should regularly check the university academic
+            portal and examination notifications for updated
+            examination timetables, hall tickets, results,
+            revaluation notices and supplementary examination
+            information.
+        </p>
+
+    </div>
+
+
+    <!-- PROJECT NOTE -->
+
+    <div class="warning-box">
+
+        <h3>⚠️ Important Project Note</h3>
+
+        <p>
+            This Examinations page is prepared as part of the
+            University Academic Information Portal project.
+            The examination dates, timings, rules and other
+            information shown here are <strong>sample/project
+            information</strong>. Actual examination dates,
+            regulations and procedures should be replaced with
+            official university notifications.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        University Academic Information Portal
+    </p>
+
+    <p>
+        Examination Services 2027
+    </p>
+
+    <p>
+
+        <a href="index.html">
+            ← Back to Home
+        </a>
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

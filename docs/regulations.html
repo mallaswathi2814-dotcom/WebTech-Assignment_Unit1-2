@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Academic Regulations | University Academic Portal</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #263238;
+}
+
+/* TOP BAR */
+
+.topbar {
+    background: #102a43;
+    color: white;
+    padding: 10px 7%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#1565c0,#6a1b9a);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.university-name h1 {
+    color: #102a43;
+    font-size: 22px;
+}
+
+.university-name p {
+    color: #607d8b;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #263238;
+    font-weight: bold;
+    padding: 10px 13px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: #1565c0;
+    color: white;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(135deg,#102a43,#1565c0);
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.hero h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    color: #e3f2fd;
+    line-height: 1.6;
+}
+
+/* SECTION */
+
+.section {
+    padding: 60px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #102a43;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #607d8b;
+}
+
+/* SUMMARY */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    margin-bottom: 55px;
+}
+
+.summary-card {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    border-top: 5px solid #1565c0;
+}
+
+.summary-card h2 {
+    color: #1565c0;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.summary-card p {
+    color: #607d8b;
+    font-weight: bold;
+}
+
+/* REGULATION CARDS */
+
+.regulation-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.regulation-card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    border-left: 6px solid #6a1b9a;
+    transition: 0.3s;
+}
+
+.regulation-card:hover {
+    transform: translateY(-5px);
+}
+
+.regulation-card h3 {
+    color: #6a1b9a;
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.regulation-card p {
+    color: #607d8b;
+    line-height: 1.7;
+}
+
+.regulation-card ul {
+    margin-left: 20px;
+    color: #607d8b;
+    line-height: 1.8;
+}
+
+/* INFORMATION BOX */
+
+.info-box {
+    background: white;
+    margin-top: 45px;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.info-box h2 {
+    color: #102a43;
+    margin-bottom: 20px;
+}
+
+.info-box p {
+    color: #546e7a;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+/* TABLE */
+
+.table-container {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-top: 45px;
+    overflow-x: auto;
+}
+
+.table-container h2 {
+    color: #102a43;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+th {
+    background: #1565c0;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    color: #546e7a;
+}
+
+tr:hover {
+    background: #f4f7fb;
+}
+
+/* DIFFERENT TABLES */
+
+.grade-table th {
+    background: #2e7d32;
+}
+
+.attendance-table th {
+    background: #00897b;
+}
+
+.credit-table th {
+    background: #ef6c00;
+}
+
+.exam-table th {
+    background: #c62828;
+}
+
+/* TWO COLUMN */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.column-card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.column-card h2 {
+    color: #102a43;
+    margin-bottom: 18px;
+}
+
+.column-card ul {
+    margin-left: 22px;
+    color: #546e7a;
+    line-height: 2;
+}
+
+/* NOTICE */
+
+.notice {
+    margin-top: 45px;
+    background: #e3f2fd;
+    padding: 28px;
+    border-left: 6px solid #1565c0;
+    border-radius: 10px;
+}
+
+.notice h3 {
+    color: #1565c0;
+    margin-bottom: 12px;
+}
+
+.notice p {
+    color: #455a64;
+    line-height: 1.8;
+}
+
+/* IMPORTANT RULE */
+
+.warning-box {
+    margin-top: 30px;
+    background: #fff3e0;
+    padding: 28px;
+    border-left: 6px solid #ef6c00;
+    border-radius: 10px;
+}
+
+.warning-box h3 {
+    color: #ef6c00;
+    margin-bottom: 12px;
+}
+
+.warning-box p {
+    color: #5d4037;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+    background: #102a43;
+    color: white;
+    padding: 40px 7%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer p {
+    color: #d9e2ec;
+    margin: 8px;
+}
+
+footer a {
+    color: #ffca28;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .regulation-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width:650px) {
+
+    .topbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .summary-grid,
+    .regulation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div>
+        Academic Helpdesk: +91 93986 38250
+    </div>
+
+    <div>
+        universityacademic@gmail.com | Academic Year 2027
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo-section">
+
+        <div class="logo">
+            VU
+        </div>
+
+        <div class="university-name">
+
+            <h1>University Academic Portal</h1>
+
+            <p>Academic Information & Student Services</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="department.html">
+            Departments / Schools
+        </a>
+
+        <a href="program.html">
+            Programs
+        </a>
+
+        <a href="academiccalendar.html">
+            Academic Calendar
+        </a>
+
+        <a href="regulations.html" class="active">
+            Regulations
+        </a>
+
+        <a href="examinations.html">
+            Examinations
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h2>Academic Regulations</h2>
+
+    <p>
+        Academic Rules • Attendance • Credits • Grading • Promotion • Conduct
+    </p>
+
+</section>
+
+
+<!-- MAIN -->
+
+<section class="section">
+
+
+    <!-- SUMMARY -->
+
+    <div class="section-title">
+
+        <h2>Academic Regulations at a Glance</h2>
+
+        <p>
+            Important rules and guidelines for students
+        </p>
+
+    </div>
+
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+
+            <h2>75%</h2>
+
+            <p>Minimum Attendance</p>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <h2>10</h2>
+
+            <p>Maximum Grade Point</p>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <h2>UG / PG</h2>
+
+            <p>Academic Levels</p>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <h2>6</h2>
+
+            <p>Major Regulation Areas</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN REGULATIONS -->
+
+    <div class="section-title">
+
+        <h2>Major Academic Regulations</h2>
+
+        <p>
+            Rules applicable to students during their academic programme
+        </p>
+
+    </div>
+
+
+    <div class="regulation-grid">
+
+
+        <div class="regulation-card">
+
+            <h3>🎓 Undergraduate Regulations</h3>
+
+            <p>
+                Guidelines for undergraduate students regarding
+                course registration, attendance, examinations,
+                credits, grading and academic progression.
+            </p>
+
+            <ul>
+                <li>Course registration</li>
+                <li>Credit requirements</li>
+                <li>Attendance requirements</li>
+                <li>Semester examinations</li>
+            </ul>
+
+        </div>
+
+
+        <div class="regulation-card">
+
+            <h3>📚 Postgraduate Regulations</h3>
+
+            <p>
+                Academic rules for postgraduate programmes including
+                coursework, projects, seminars, examinations and
+                completion requirements.
+            </p>
+
+            <ul>
+                <li>Coursework</li>
+                <li>Projects</li>
+                <li>Seminars</li>
+                <li>Research activities</li>
+            </ul>
+
+        </div>
+
+
+        <div class="regulation-card">
+
+            <h3>📝 Examination Regulations</h3>
+
+            <p>
+                Students must follow all examination procedures
+                related to registration, hall tickets, examination
+                halls and evaluation.
+            </p>
+
+            <ul>
+                <li>Exam registration</li>
+                <li>Hall ticket</li>
+                <li>Exam attendance</li>
+                <li>Evaluation</li>
+            </ul>
+
+        </div>
+
+
+        <div class="regulation-card">
+
+            <h3>⏰ Attendance Regulations</h3>
+
+            <p>
+                Students are expected to maintain the prescribed
+                attendance percentage in lectures, laboratories
+                and academic activities.
+            </p>
+
+            <ul>
+                <li>Minimum attendance</li>
+                <li>Attendance monitoring</li>
+                <li>Leave rules</li>
+                <li>Condonation provisions</li>
+            </ul>
+
+        </div>
+
+
+        <div class="regulation-card">
+
+            <h3>📊 Credit & Promotion Rules</h3>
+
+            <p>
+                Students must earn the required credits and satisfy
+                academic requirements for promotion to the next
+                academic level.
+            </p>
+
+            <ul>
+                <li>Credit completion</li>
+                <li>Course requirements</li>
+                <li>Backlog courses</li>
+                <li>Promotion criteria</li>
+            </ul>
+
+        </div>
+
+
+        <div class="regulation-card">
+
+            <h3>⚖️ Academic Integrity</h3>
+
+            <p>
+                Students must maintain honesty and integrity in
+                examinations, assignments, projects, research and
+                academic activities.
+            </p>
+
+            <ul>
+                <li>No plagiarism</li>
+                <li>No cheating</li>
+                <li>Original work</li>
+                <li>Proper citations</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- ATTENDANCE -->
+
+    <div class="table-container">
+
+        <h2>⏰ Attendance & Academic Eligibility</h2>
+
+        <table class="attendance-table">
+
+            <tr>
+
+                <th>Attendance</th>
+
+                <th>Status</th>
+
+                <th>Academic Eligibility</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>90% – 100%</td>
+
+                <td>Excellent</td>
+
+                <td>Eligible for academic activities and examinations</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>75% – 89%</td>
+
+                <td>Satisfactory</td>
+
+                <td>Normally eligible for examinations</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>65% – 74%</td>
+
+                <td>Shortage</td>
+
+                <td>May require condonation according to applicable rules</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Below 65%</td>
+
+                <td>Insufficient</td>
+
+                <td>May not be eligible unless permitted under applicable rules</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- GRADING SYSTEM -->
+
+    <div class="table-container">
+
+        <h2>📊 Grading System</h2>
+
+        <table class="grade-table">
+
+            <tr>
+
+                <th>Grade</th>
+
+                <th>Grade Point</th>
+
+                <th>Performance</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>A+</td>
+
+                <td>10</td>
+
+                <td>Outstanding</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>A</td>
+
+                <td>9</td>
+
+                <td>Excellent</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>B+</td>
+
+                <td>8</td>
+
+                <td>Very Good</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>B</td>
+
+                <td>7</td>
+
+                <td>Good</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>C</td>
+
+                <td>6</td>
+
+                <td>Satisfactory</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>D</td>
+
+                <td>5</td>
+
+                <td>Pass</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>F</td>
+
+                <td>0</td>
+
+                <td>Fail</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- CREDIT SYSTEM -->
+
+    <div class="table-container">
+
+        <h2>📚 Credit & Course Structure</h2>
+
+        <table class="credit-table">
+
+            <tr>
+
+                <th>Course Type</th>
+
+                <th>Purpose</th>
+
+                <th>Examples</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Core Courses</td>
+
+                <td>Essential subjects of the programme</td>
+
+                <td>Major / Core Subjects</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Elective Courses</td>
+
+                <td>Students can choose from available subjects</td>
+
+                <td>Professional / Open Electives</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Laboratory Courses</td>
+
+                <td>Practical and technical learning</td>
+
+                <td>Programming / Computer Labs</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Project</td>
+
+                <td>Application of academic knowledge</td>
+
+                <td>Mini Project / Major Project</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>Seminar</td>
+
+                <td>Presentation and communication skills</td>
+
+                <td>Technical Seminar</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- PROMOTION -->
+
+    <div class="two-column">
+
+
+        <div class="column-card">
+
+            <h2>⬆️ Promotion Rules</h2>
+
+            <ul>
+
+                <li>Students must complete the required academic activities.</li>
+
+                <li>Students must satisfy attendance requirements.</li>
+
+                <li>Students must appear for prescribed examinations.</li>
+
+                <li>Required credits should be completed.</li>
+
+                <li>Backlog courses must be cleared according to university rules.</li>
+
+                <li>Students must satisfy the requirements for progression to the next semester.</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="column-card">
+
+            <h2>🔄 Revaluation & Supplementary</h2>
+
+            <ul>
+
+                <li>Students may apply for revaluation when permitted.</li>
+
+                <li>Applications must be submitted within the prescribed deadline.</li>
+
+                <li>Supplementary examinations may be conducted for eligible students.</li>
+
+                <li>Students should register for backlog examinations separately.</li>
+
+                <li>Examination fees may apply according to university rules.</li>
+
+                <li>Results will be updated after completion of evaluation.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- EXAMINATION RULES -->
+
+    <div class="table-container">
+
+        <h2>📝 Examination Rules</h2>
+
+        <table class="exam-table">
+
+            <tr>
+
+                <th>No.</th>
+
+                <th>Rule</th>
+
+                <th>Requirement</th>
+
+            </tr>
+
+
+            <tr>
+
+                <td>1</td>
+
+                <td>Examination Hall</td>
+
+                <td>Students must report to the examination hall before the scheduled time.</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>2</td>
+
+                <td>Identity Card</td>
+
+                <td>Valid university identity card should be carried.</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>3</td>
+
+                <td>Hall Ticket</td>
+
+                <td>Students should carry the prescribed hall ticket.</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>4</td>
+
+                <td>Electronic Devices</td>
+
+                <td>Mobile phones and unauthorized electronic devices are not permitted.</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>5</td>
+
+                <td>Malpractice</td>
+
+                <td>Any malpractice may lead to disciplinary action.</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>6</td>
+
+                <td>Answer Book</td>
+
+                <td>Students must follow instructions for writing and submitting answer books.</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>7</td>
+
+                <td>Late Entry</td>
+
+                <td>Late entry is subject to applicable examination rules.</td>
+
+            </tr>
+
+
+            <tr>
+
+                <td>8</td>
+
+                <td>Leaving Examination Hall</td>
+
+                <td>Students must follow the prescribed rules before leaving the examination hall.</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- STUDENT CODE OF CONDUCT -->
+
+    <div class="info-box">
+
+        <h2>👩‍🎓 Student Code of Conduct</h2>
+
+        <p>
+            Students are expected to maintain discipline and
+            professional behaviour inside the university campus.
+        </p>
+
+        <p>
+            Students should respect faculty members, staff,
+            fellow students and university property.
+        </p>
+
+        <p>
+            Students must not participate in activities that
+            disturb the academic environment or violate university
+            rules.
+        </p>
+
+        <p>
+            Proper academic behaviour is expected during classes,
+            laboratories, examinations, seminars, workshops and
+            university events.
+        </p>
+
+    </div>
+
+
+    <!-- ACADEMIC INTEGRITY -->
+
+    <div class="info-box">
+
+        <h2>⚖️ Academic Integrity & Plagiarism</h2>
+
+        <p>
+            Students must submit their own work for assignments,
+            laboratory records, projects and examinations.
+        </p>
+
+        <p>
+            Copying another student's work, submitting copied
+            content without acknowledgement, impersonation,
+            cheating or other forms of academic malpractice
+            may result in disciplinary action.
+        </p>
+
+        <p>
+            Sources used in academic assignments and projects
+            should be properly acknowledged.
+        </p>
+
+    </div>
+
+
+    <!-- REGISTRATION -->
+
+    <div class="two-column">
+
+
+        <div class="column-card">
+
+            <h2>📋 Course Registration</h2>
+
+            <ul>
+
+                <li>Students should register for courses within the prescribed period.</li>
+
+                <li>Students should verify their registered courses.</li>
+
+                <li>Prerequisite requirements should be satisfied.</li>
+
+                <li>Elective courses are subject to availability.</li>
+
+                <li>Changes to registration should follow university procedures.</li>
+
+                <li>Students should maintain a record of registered courses.</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="column-card">
+
+            <h2>📅 Leave & Absence</h2>
+
+            <ul>
+
+                <li>Students should obtain permission for planned leave.</li>
+
+                <li>Medical leave may require supporting documents.</li>
+
+                <li>Absence should not result in attendance shortage.</li>
+
+                <li>Leave applications should be submitted within the prescribed time.</li>
+
+                <li>Long absence may require approval from the appropriate authority.</li>
+
+                <li>Students are responsible for completing missed academic work.</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <h3>📢 Important Academic Notice</h3>
+
+        <p>
+            Students are responsible for reading and following all
+            academic regulations, examination rules, attendance
+            requirements and university notifications applicable
+            to their programme.
+        </p>
+
+        <p>
+            Regulations may differ between programmes and may be
+            revised by the university from time to time.
+        </p>
+
+    </div>
+
+
+    <!-- WARNING -->
+
+    <div class="warning-box">
+
+        <h3>⚠️ Important Note</h3>
+
+        <p>
+            This Academic Regulations page is prepared as part of
+            the University Academic Information Portal project.
+            The rules, grading scale, attendance percentages,
+            credits and other details shown here are
+            <strong>sample/project information</strong>.
+            Official university regulations and notifications
+            should be followed for actual academic decisions.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        University Academic Information Portal
+    </p>
+
+    <p>
+        Academic Regulations 2027
+    </p>
+
+    <p>
+
+        <a href="index.html">
+            ← Back to Home
+        </a>
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

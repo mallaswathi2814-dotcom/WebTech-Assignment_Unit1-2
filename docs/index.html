@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>University Academic Information Portal</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #263238;
+}
+
+/* TOP BAR */
+
+.topbar {
+    background: #102a43;
+    color: white;
+    padding: 10px 7%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+/* HEADER */
+
+header {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1565c0, #6a1b9a);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.university-name h1 {
+    color: #102a43;
+    font-size: 22px;
+}
+
+.university-name p {
+    color: #607d8b;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #263238;
+    font-weight: bold;
+    padding: 10px 13px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: #1565c0;
+    color: white;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 430px;
+    background: linear-gradient(
+        rgba(16,42,67,0.88),
+        rgba(21,101,192,0.85)
+    );
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero h3 {
+    font-size: 25px;
+    color: #ffca28;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #ffca28;
+    color: #102a43;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.hero-btn:hover {
+    background: white;
+}
+
+/* SECTION */
+
+.section {
+    padding: 60px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #102a43;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #607d8b;
+}
+
+/* CARDS */
+
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.portal-card {
+    background: white;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border-top: 5px solid #1565c0;
+}
+
+.portal-card:hover {
+    transform: translateY(-8px);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: #e3f2fd;
+    color: #1565c0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.portal-card h3 {
+    color: #102a43;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.portal-card p {
+    color: #607d8b;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #1565c0;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.card-btn:hover {
+    background: #102a43;
+}
+
+/* INFORMATION */
+
+.info-section {
+    background: white;
+    padding: 50px 7%;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.info-box {
+    text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+    background: #f4f7fb;
+    border-bottom: 4px solid #1565c0;
+}
+
+.info-box h2 {
+    color: #1565c0;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.info-box p {
+    color: #607d8b;
+    font-weight: bold;
+}
+
+/* NOTICE */
+
+.notice {
+    margin: 50px 7%;
+    padding: 25px;
+    background: #fff8e1;
+    border-left: 6px solid #ffca28;
+    border-radius: 8px;
+}
+
+.notice h3 {
+    color: #ef6c00;
+    margin-bottom: 10px;
+}
+
+.notice p {
+    line-height: 1.6;
+    color: #5d4037;
+}
+
+/* FOOTER */
+
+footer {
+    background: #102a43;
+    color: white;
+    padding: 40px 7% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+    color: #ffca28;
+}
+
+footer p {
+    color: #d9e2ec;
+    line-height: 1.7;
+}
+
+footer a {
+    display: block;
+    text-decoration: none;
+    color: #d9e2ec;
+    margin-bottom: 10px;
+}
+
+footer a:hover {
+    color: #ffca28;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #486581;
+    margin-top: 30px;
+    padding-top: 20px;
+    color: #bcccdc;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .portal-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px) {
+
+    .topbar {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+    .portal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        justify-content: center;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+    <div>Academic Helpdesk: +91 93986 38250</div>
+
+    <div>
+        universityacademic@gmail.com | Academic Year 2026–27
+    </div>
+
+</div>
+
+<header>
+
+    <div class="logo-section">
+
+        <div class="logo">VU</div>
+
+        <div class="university-name">
+
+            <h1>University Academic Portal</h1>
+
+            <p>Academic Information & Student Services</p>
+
+        </div>
+
+    </div>
+
+    <!-- SAME NAVIGATION ON ALL PAGES -->
+
+    <nav>
+
+        <a href="index.html" class="active">Home</a>
+
+        <a href="department.html">Departments / Schools</a>
+
+        <a href="program.html">Programs</a>
+
+        <a href="academiccalendar.html">Academic Calendar</a>
+
+        <a href="regulations.html">Regulations</a>
+
+        <a href="examinations.html">Examinations</a>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h2>University Academic Information Portal</h2>
+
+        <h3>One Portal. Complete Academic Information.</h3>
+
+        <p>
+            Welcome to the University Academic Information Portal.
+            Access schools and departments, academic programs,
+            academic calendar, regulations and examination
+            information through one professional platform.
+        </p>
+
+        <a href="#academic-services" class="hero-btn">
+            Explore Academic Services
+        </a>
+
+    </div>
+
+</section>
+
+<section class="section" id="academic-services">
+
+    <div class="section-title">
+
+        <h2>Academic Services</h2>
+
+        <p>Select a service to explore complete academic information.</p>
+
+    </div>
+
+    <div class="portal-grid">
+
+        <div class="portal-card">
+
+            <div class="icon">🏫</div>
+
+            <h3>Schools & Departments</h3>
+
+            <p>
+                Explore university schools, departments,
+                academic divisions and their areas of study.
+            </p>
+
+            <a href="department.html" class="card-btn">
+                View Departments
+            </a>
+
+        </div>
+
+        <div class="portal-card">
+
+            <div class="icon">🎓</div>
+
+            <h3>Academic Programs</h3>
+
+            <p>
+                View undergraduate, postgraduate and doctoral
+                programs offered by different academic schools.
+            </p>
+
+            <a href="program.html" class="card-btn">
+                View Programs
+            </a>
+
+        </div>
+
+        <div class="portal-card">
+
+            <div class="icon">📅</div>
+
+            <h3>Academic Calendar</h3>
+
+            <p>
+                Check academic activities, semester dates,
+                examinations, holidays and important academic events.
+            </p>
+
+            <a href="academiccalendar.html" class="card-btn">
+                View Calendar
+            </a>
+
+        </div>
+
+        <div class="portal-card">
+
+            <div class="icon">📘</div>
+
+            <h3>Academic Regulations</h3>
+
+            <p>
+                Access academic rules, attendance requirements,
+                grading system, credits and student regulations.
+            </p>
+
+            <a href="regulations.html" class="card-btn">
+                View Regulations
+            </a>
+
+        </div>
+
+        <div class="portal-card">
+
+            <div class="icon">📝</div>
+
+            <h3>Examinations</h3>
+
+            <p>
+                Find examination schedules, internal assessments,
+                practical examinations, results and examination rules.
+            </p>
+
+            <a href="examinations.html" class="card-btn">
+                View Examinations
+            </a>
+
+        </div>
+
+        <div class="portal-card">
+
+            <div class="icon">👨‍🎓</div>
+
+            <h3>Student Academic Services</h3>
+
+            <p>
+                Access useful academic information and
+                student support services from one place.
+            </p>
+
+            <a href="#academic-services" class="card-btn">
+                Explore Services
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="info-section">
+
+    <div class="section-title">
+
+        <h2>Portal Information</h2>
+
+        <p>Academic information at a glance</p>
+
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-box">
+            <h2>06</h2>
+            <p>Schools</p>
+        </div>
+
+        <div class="info-box">
+            <h2>20+</h2>
+            <p>Departments</p>
+        </div>
+
+        <div class="info-box">
+            <h2>UG</h2>
+            <p>Programs</p>
+        </div>
+
+        <div class="info-box">
+            <h2>PG</h2>
+            <p>Programs</p>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="notice">
+
+    <h3>📢 Academic Notice</h3>
+
+    <p>
+        Students are advised to regularly check the Academic
+        Information Portal for updates related to academic
+        programs, examinations, regulations, academic calendar
+        and departmental information.
+    </p>
+
+</div>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>University Academic Portal</h3>
+
+            <p>
+                A centralized academic information portal designed
+                to provide students with easy access to university
+                academic information and services.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a>
+
+            <a href="department.html">Departments / Schools</a>
+
+            <a href="program.html">Programs</a>
+
+            <a href="academiccalendar.html">Academic Calendar</a>
+
+        </div>
+
+        <div>
+
+            <h3>Academic Services</h3>
+
+            <a href="regulations.html">Regulations</a>
+
+            <a href="examinations.html">Examinations</a>
+
+            <a href="program.html">Academic Programs</a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 University Academic Information Portal.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Schools & Departments</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #263238;
+}
+
+.topbar {
+    background: #102a43;
+    color: white;
+    padding: 10px 7%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+header {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#1565c0,#6a1b9a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.university-name h1 {
+    color: #102a43;
+    font-size: 22px;
+}
+
+.university-name p {
+    color: #607d8b;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #263238;
+    font-weight: bold;
+    padding: 10px 13px;
+    border-radius: 6px;
+}
+
+nav a:hover,
+nav a.active {
+    background: #1565c0;
+    color: white;
+}
+
+.hero {
+    background: linear-gradient(135deg,#102a43,#1565c0);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #e3f2fd;
+}
+
+.section {
+    padding: 60px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #102a43;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #607d8b;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-top: 5px solid #1565c0;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card h3 {
+    color: #1565c0;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.card h4 {
+    color: #102a43;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #607d8b;
+    line-height: 1.7;
+}
+
+.badge {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #1565c0;
+    padding: 7px 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+footer {
+    background: #102a43;
+    color: white;
+    padding: 35px 7%;
+    text-align: center;
+}
+
+footer p {
+    color: #d9e2ec;
+    line-height: 1.7;
+}
+
+footer a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+@media(max-width:900px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+    <div>Academic Helpdesk: +91 93986 38250</div>
+
+    <div>universityacademic@gmail.com | Academic Year 2026–27</div>
+
+</div>
+
+<header>
+
+    <div class="logo-section">
+
+        <div class="logo">VU</div>
+
+        <div class="university-name">
+
+            <h1>University Academic Portal</h1>
+
+            <p>Academic Information & Student Services</p>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="department.html" class="active">
+            Departments / Schools
+        </a>
+
+        <a href="program.html">Programs</a>
+
+        <a href="academiccalendar.html">Academic Calendar</a>
+
+        <a href="regulations.html">Regulations</a>
+
+        <a href="examinations.html">Examinations</a>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <h2>Schools & Departments</h2>
+
+    <p>Academic Structure of the University</p>
+
+</section>
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>Schools / Departments</h2>
+
+        <p>Explore the major academic schools and their areas of study.</p>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <span class="badge">SAS</span>
+
+            <h3>School of Advanced Sciences</h3>
+
+            <h4>Departments</h4>
+
+            <p>
+                Mathematics<br>
+                Physics<br>
+                Chemistry<br>
+                Statistics
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <span class="badge">SCOPE</span>
+
+            <h3>School of Computer Science & Engineering</h3>
+
+            <h4>Departments</h4>
+
+            <p>
+                Computer Science<br>
+                Artificial Intelligence<br>
+                Data Science<br>
+                Information Technology
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <span class="badge">SENSE</span>
+
+            <h3>School of Electronics & Electrical Engineering</h3>
+
+            <h4>Departments</h4>
+
+            <p>
+                Electronics<br>
+                Electrical Engineering<br>
+                Communication Systems<br>
+                Embedded Systems
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <span class="badge">VISH</span>
+
+            <h3>School of Humanities & Social Sciences</h3>
+
+            <h4>Departments</h4>
+
+            <p>
+                English<br>
+                Languages<br>
+                Social Sciences<br>
+                Communication Studies
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <span class="badge">MEC</span>
+
+            <h3>School of Mechanical Engineering</h3>
+
+            <h4>Departments</h4>
+
+            <p>
+                Mechanical Engineering<br>
+                Manufacturing<br>
+                Robotics<br>
+                Industrial Engineering
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <span class="badge">BBA</span>
+
+            <h3>School of Business & Management</h3>
+
+            <h4>Departments</h4>
+
+            <p>
+                Business Administration<br>
+                Finance<br>
+                Marketing<br>
+                Human Resource Management
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>
+        University Academic Information Portal
+    </p>
+
+    <p>
+        <a href="index.html">← Back to Home</a>
+    </p>
+
+</footer>
+
+</body>
+
+</html>

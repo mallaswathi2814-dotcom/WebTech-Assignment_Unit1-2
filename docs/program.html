@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Academic Programs</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #263238;
+}
+
+.topbar {
+    background: #102a43;
+    color: white;
+    padding: 10px 7%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+header {
+    background: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#1565c0,#6a1b9a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.university-name h1 {
+    color: #102a43;
+    font-size: 22px;
+}
+
+.university-name p {
+    color: #607d8b;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #263238;
+    font-weight: bold;
+    padding: 10px 13px;
+    border-radius: 6px;
+}
+
+nav a:hover,
+nav a.active {
+    background: #1565c0;
+    color: white;
+}
+
+.hero {
+    background: linear-gradient(135deg,#102a43,#1565c0);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #e3f2fd;
+}
+
+.section {
+    padding: 60px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #102a43;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #607d8b;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-top: 5px solid #6a1b9a;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card h3 {
+    color: #6a1b9a;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #607d8b;
+    line-height: 1.7;
+}
+
+.details {
+    margin-top: 18px;
+    background: #f4f7fb;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.details strong {
+    color: #102a43;
+}
+
+footer {
+    background: #102a43;
+    color: white;
+    padding: 35px 7%;
+    text-align: center;
+}
+
+footer p {
+    color: #d9e2ec;
+    margin: 8px;
+}
+
+footer a {
+    color: #ffca28;
+    text-decoration: none;
+}
+
+@media(max-width:900px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+
+    <div>Academic Helpdesk: +91 93986 38250</div>
+
+    <div>universityacademic@gmail.com | Academic Year 2026–27</div>
+
+</div>
+
+<header>
+
+    <div class="logo-section">
+
+        <div class="logo">VU</div>
+
+        <div class="university-name">
+
+            <h1>University Academic Portal</h1>
+
+            <p>Academic Information & Student Services</p>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="department.html">Departments / Schools</a>
+
+        <a href="program.html" class="active">Programs</a>
+
+        <a href="academiccalendar.html">Academic Calendar</a>
+
+        <a href="regulations.html">Regulations</a>
+
+        <a href="examinations.html">Examinations</a>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <h2>Academic Programs</h2>
+
+    <p>Explore Undergraduate, Postgraduate and Doctoral Programs</p>
+
+</section>
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>Programs Offered</h2>
+
+        <p>Academic pathways for students and researchers.</p>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>B.Sc. Data Science</h3>
+
+            <p>
+                An undergraduate program focused on statistics,
+                data analysis, machine learning and data-driven
+                decision making.
+            </p>
+
+            <div class="details">
+                <strong>Duration:</strong> 3 Years<br>
+                <strong>Level:</strong> Undergraduate
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>B.Tech Computer Science</h3>
+
+            <p>
+                A technology-oriented program covering programming,
+                algorithms, databases, computer networks and software engineering.
+            </p>
+
+            <div class="details">
+                <strong>Duration:</strong> 4 Years<br>
+                <strong>Level:</strong> Undergraduate
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>BBA</h3>
+
+            <p>
+                A management program covering business administration,
+                finance, marketing, human resources and entrepreneurship.
+            </p>
+
+            <div class="details">
+                <strong>Duration:</strong> 3 Years<br>
+                <strong>Level:</strong> Undergraduate
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>MCA</h3>
+
+            <p>
+                A postgraduate computer applications program focusing
+                on software development, databases, programming and technology.
+            </p>
+
+            <div class="details">
+                <strong>Duration:</strong> 2 Years<br>
+                <strong>Level:</strong> Postgraduate
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>MBA</h3>
+
+            <p>
+                A postgraduate management program covering business,
+                finance, marketing, operations and organizational management.
+            </p>
+
+            <div class="details">
+                <strong>Duration:</strong> 2 Years<br>
+                <strong>Level:</strong> Postgraduate
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Ph.D.</h3>
+
+            <p>
+                A doctoral research program designed for advanced
+                research, innovation and academic development.
+            </p>
+
+            <div class="details">
+                <strong>Duration:</strong> 3–6 Years<br>
+                <strong>Level:</strong> Doctoral
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>University Academic Information Portal</p>
+
+    <p>
+        <a href="index.html">← Back to Home</a>
+    </p>
+
+</footer>
+
+</body>
+
+</html>
